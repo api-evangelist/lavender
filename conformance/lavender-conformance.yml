@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.lavender.ai/privacy
+notes: >-
+  Lavender publishes no public developer API, OpenAPI definition, or authentication
+  reference, so the API-level standards below cannot be asserted and are recorded as
+  unknown rather than false. The compliance posture is a real, published claim taken
+  verbatim from the company privacy page.
+standards:
+- id: soc2-type-2
+  conforms: true
+  evidence: 'Privacy page states: "We are SOC 2 Type 2 certified and GDPR compliant."'
+  source: https://www.lavender.ai/privacy
+- id: gdpr
+  conforms: true
+  evidence: 'Privacy page states GDPR compliance; users can delete all held data on request.'
+  source: https://www.lavender.ai/privacy
+- id: ccpa
+  conforms: true
+  evidence: 'Privacy page: "In compliance with GDPR, CCPA, and other data privacy acts, users
+    can easily and automatically delete any data we have on them."'
+  source: https://www.lavender.ai/privacy
+- id: google-api-services-user-data-policy
+  conforms: true
+  evidence: 'Privacy page asserts adherence to the Google API Services User Data Policy,
+    including the Limited Use requirements (Gmail access by the Email Coach extension).'
+  source: https://www.lavender.ai/privacy
+- id: hipaa
+  conforms: false
+  evidence: 'Terms of service state the product is not tailored to comply with industry-specific
+    regulations such as HIPAA or FISMA.'
+  source: https://www.lavender.ai/terms-of-service
+- id: iso-27001
+  conforms: false
+  evidence: No ISO 27001 claim published on the website, privacy page, or a trust center.
+- id: oauth2
+  conforms: unknown
+  evidence: No public API or documented authorization surface; the Gmail/Outlook integrations
+    use the host mail platform's own OAuth, not a Lavender-published OAuth service.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public OpenAPI or error reference published.

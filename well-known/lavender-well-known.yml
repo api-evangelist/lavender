@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of /.well-known/ on Lavender hosts
+notes: >-
+  No .well-known documents are published on any Lavender host. Recorded for auditability;
+  no raw files were saved and no WellKnown/SecurityTxt pointer is wired in apis.yml
+  because nothing was found.
+hosts:
+- host: https://www.lavender.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://api.lavender.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404

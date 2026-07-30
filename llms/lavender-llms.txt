@@ -1,0 +1,51 @@
+# Lavender
+
+> Lavender is an AI email intelligence company for sales teams. Its Email Coach browser extension and
+> Outlook add-in score and coach outbound sales email in real time using models trained on billions of
+> sales emails; its Ora product is an AI sales agent that drafts email and pushes reasoned prospect
+> research into Salesforce. Lavender ships as an end-user extension and a CRM integration — it publishes
+> no public developer API, API reference, OpenAPI definition, or client SDKs.
+
+## Products
+
+- [Email Coach](https://www.lavender.ai/coach): Real-time scoring and coaching for sales email in Gmail, Outlook, and supported sales engagement tools.
+- [Ora](https://www.ora.im): AI sales agent that drafts email and reasons through prospect research.
+- [CRM Enrichment](https://www.lavender.ai/crm): Pushes reasoned research into Salesforce contact and account records. Available to Salesforce CRM customers.
+- [Install](https://install.lavender.ai): Add the Email Coach to Chrome.
+- [Dashboard](https://dashboard.lavender.ai/): Account sign-in.
+
+## Developer surface
+
+- No public API, developer portal, or API reference is published as of 2026-07-19.
+- No OpenAPI, AsyncAPI, GraphQL, or gRPC definition is published.
+- No first-party client SDKs or CLI are published on npm, PyPI, or other public registries.
+- No webhook or event catalog is published.
+- No `/.well-known/` discovery documents are served on `www.lavender.ai` or `api.lavender.ai`.
+- Integration with Lavender is via the browser extension, the Outlook add-in, and the Salesforce integration.
+
+## Docs and learning
+
+- [Blog](https://www.lavender.ai/blog)
+- [Product Help](https://www.lavender.ai/blog?category=Product+Help)
+- [Email Wizard Certification course](https://lavender.thinkific.com/courses/EmailWizard101)
+- [Lavender Letter newsletter](https://www.lavender.ai/lavender-letter)
+- [YouTube](https://www.youtube.com/@itslavenderduh/videos)
+
+## Commercial and legal
+
+- [Pricing — Coach](https://www.lavender.ai/coach#pricing)
+- [Pricing — Ora](https://www.lavender.ai/ora#pricing)
+- [Terms of Service](https://www.lavender.ai/terms-of-service)
+- [Privacy & Data](https://www.lavender.ai/privacy)
+- Compliance: SOC 2 Type 2 certified, GDPR and CCPA compliant. Not tailored to HIPAA or FISMA.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/lavender/refs/heads/main/apis.yml)
+- conformance/lavender-conformance.yml — published compliance posture
+- security/lavender-domain-security.yml — TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe
+- well-known/lavender-well-known.yml — /.well-known probe results (none published)
+
+## Contact
+
+- support@lavender.ai
