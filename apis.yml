@@ -1,21 +1,45 @@
 aid: lavender
 name: Lavender
-description: 'Lavender is a company surfaced as a portfolio company of norwest-venture-partners and added
-  to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Lavender is an AI email intelligence company for sales teams. Its Email Coach is a browser
+  extension and Outlook add-in that scores and coaches outbound sales email in real time — subject line,
+  structure, tone, length and personalization — using models trained on billions of sales emails, and its
+  newer product Ora is an AI sales agent that drafts email and pushes reasoned prospect research into
+  Salesforce CRM records. Lavender is distributed as an end-user extension and a Salesforce integration
+  rather than as a public developer API: as of this profile the company publishes no developer portal,
+  no API reference, no OpenAPI definition, and no client SDKs. It is SOC 2 Type 2 certified and GDPR
+  compliant. Lavender is backed by Norwest Venture Partners.'
 url: https://raw.githubusercontent.com/api-evangelist/lavender/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/658433a0cbce340e298ba330/658433a0cbce340e298ba44f_webclip.jpg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - norwest-venture-partners
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-- Unknown
+- Sales
+- Email
+- Artificial Intelligence
+- Sales Enablement
+- Sales Engagement
+- CRM
+- Browser Extension
+- Productivity
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,4 +48,37 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://lavender.ai
+  url: https://www.lavender.ai
+- type: Blog
+  url: https://www.lavender.ai/blog
+- type: Support
+  url: https://www.lavender.ai/blog?category=Product+Help
+- type: Pricing
+  url: https://www.lavender.ai/coach#pricing
+- type: SignUp
+  url: https://install.lavender.ai
+- type: Login
+  url: https://dashboard.lavender.ai/
+- type: TermsOfService
+  url: https://www.lavender.ai/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.lavender.ai/privacy
+- type: Compliance
+  url: https://www.lavender.ai/privacy
+- type: Conformance
+  url: conformance/lavender-conformance.yml
+- type: DomainSecurity
+  url: security/lavender-domain-security.yml
+- type: LLMsTxt
+  url: llms/lavender-llms.txt
+- type: Twitter
+  url: https://twitter.com/lavenderhq
+- type: LinkedIn
+  url: https://www.linkedin.com/company/itslavenderduh/
+- type: YouTube
+  url: https://www.youtube.com/@itslavenderduh/videos
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
