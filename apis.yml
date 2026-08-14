@@ -29,7 +29,7 @@ x-tier: stub
 x-tier-reason: no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-08-13'
 tags:
 - Company
 - Sales
@@ -67,6 +67,10 @@ common:
   url: https://www.lavender.ai/privacy
 - type: Conformance
   url: conformance/lavender-conformance.yml
+- type: Packages
+  url: packages/lavender-packages.yml
+- type: Plans
+  url: plans/lavender-plans-pricing.yml
 - type: DomainSecurity
   url: security/lavender-domain-security.yml
 - type: LLMsTxt
@@ -78,7 +82,29 @@ common:
 - type: YouTube
   url: https://www.youtube.com/@itslavenderduh/videos
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 3
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Lavender ships only end-user software — a Chrome/Outlook extension, a dashboard and
+    a Salesforce integration — and exposes no developer surface at all: contract
+    discovery across www, api, app, dashboard and docs subdomains found no OpenAPI,
+    GraphQL, MCP or agent card, and docs.lavender.ai is a dangling Stoplight host
+    (CNAME ingress.stoplight.io) that Cloudflare answers with error 1014.
+  evidence:
+  - url: https://api.lavender.ai/openapi.json
+    status: 404
+  - url: https://www.lavender.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://docs.lavender.ai/openapi.json
+    status: 403
+  - url: https://app.lavender.ai/openapi.json
+    status: 200
+    note: >-
+      Soft 200 — SPA catch-all returning text/html for every path, not a spec. Recorded
+      so a later round does not read it as a contract.
+  checked: '2026-08-13'
