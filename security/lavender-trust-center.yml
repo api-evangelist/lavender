@@ -1,0 +1,43 @@
+generated: '2026-08-13'
+method: probed
+probe: true
+verified: false
+url: https://trust.lavender.ai/
+notes: >-
+  Lavender has provisioned a Drata-hosted trust center at trust.lavender.ai — the
+  hostname CNAMEs to trust.cname.drata.com, which is Drata's trust-center hosting
+  target and is a deliberate act of configuration by the company, not an accident of
+  the platform. However the page itself could NOT be read: every request returns HTTP
+  403 behind a Cloudflare interstitial ("Just a moment...", challenges.cloudflare.com),
+  including with a browser User-Agent, and Drata's public API paths return 403/401.
+  Because the document was never actually retrieved, no certifications are recorded
+  from it and NO `TrustCenter` pointer is wired into apis.yml. Presence of a DNS
+  record is not the same as a served, readable trust center, and this pipeline does
+  not award a pointer for a surface it has not read. Lavender's published compliance
+  claims (SOC 2 Type 2, GDPR, CCPA) come from the privacy page instead and are
+  captured in conformance/lavender-conformance.yml, which is what the existing
+  `Compliance` pointer refers to.
+certifications: []
+certifications_note: >-
+  None readable from the trust center. See conformance/lavender-conformance.yml for
+  the compliance claims Lavender publishes in readable form.
+evidence:
+- source: dns
+  record: CNAME
+  name: trust.lavender.ai
+  value: trust.cname.drata.com.
+  observed: '2026-08-13'
+- source: https://trust.lavender.ai/
+  http_status: 403
+  reason: Cloudflare bot challenge interstitial
+  observed: '2026-08-13'
+- source: https://trust.lavender.ai/robots.txt
+  http_status: 403
+  observed: '2026-08-13'
+- source: https://public-api.drata.com/trust/lavender
+  http_status: 401
+  observed: '2026-08-13'
+to_confirm: >-
+  A human browser session (or an allow-listed fetch) against https://trust.lavender.ai/
+  would confirm the trust center and its certification list; on confirmation, set
+  verified: true, populate certifications[], and add a `type: TrustCenter` pointer.

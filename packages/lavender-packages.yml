@@ -1,0 +1,49 @@
+generated: '2026-08-13'
+method: searched
+source: https://registry.npmjs.org/@lavender-ai%2Flav-components
+notes: >-
+  Lavender publishes no API client SDK in any public registry. The one first-party
+  package found is a React UI component library the company uses to build its own
+  Dashboard and browser extension — it is not a client for a Lavender API, and no
+  `SDKs` pointer is wired in apis.yml for it, because doing so would credit Lavender
+  with an API client library it does not ship. Registries searched on 2026-08-13:
+  npm (org scope @lavender-ai and free-text), PyPI, RubyGems, crates.io, NuGet,
+  Maven Central, pkg.go.dev and Packagist. The PyPI project named `lavender` is an
+  unrelated third-party code formatter (a fork of black by @spinda) and is NOT
+  Lavender.ai — it is recorded here only so a later round does not re-adopt it.
+packages:
+- language: javascript
+  registry: npm
+  name: '@lavender-ai/lav-components'
+  url: https://www.npmjs.com/package/@lavender-ai/lav-components
+  install: npm install @lavender-ai/lav-components
+  official: true
+  official_evidence: >-
+    Published under the @lavender-ai npm org scope; package description reads
+    "React components for use in Lavender Dashboard and Extension".
+  kind: ui-components
+  api_client: false
+  version: 2.0.3
+  published: '2026-02-16'
+  first_published: '2024-01-29'
+  release_count: 62
+  note: >-
+    Actively maintained (62 releases since Jan 2024, latest Feb 2026) but scoped to
+    Lavender's own front-end surfaces. No repository or homepage field is set on the
+    npm metadata, and no public source repository was found.
+absent:
+  - registry: pypi
+    searched: 'lavender, lavender-ai, trylavender'
+    result: no first-party package
+  - registry: rubygems
+    result: no first-party package
+  - registry: crates.io
+    result: no first-party package
+  - registry: nuget
+    result: no first-party package
+  - registry: maven-central
+    result: no first-party package
+  - registry: pkg.go.dev
+    result: no first-party package
+  - registry: packagist
+    result: no first-party package

@@ -1,38 +1,111 @@
-generated: '2026-07-19'
-method: searched
-source: live probe of /.well-known/ on Lavender hosts
+generated: '2026-08-13'
+method: probed
+source: live probe of /.well-known/ and contract paths on every Lavender host
 notes: >-
-  No .well-known documents are published on any Lavender host. Recorded for auditability;
-  no raw files were saved and no WellKnown/SecurityTxt pointer is wired in apis.yml
-  because nothing was found.
+  No .well-known document is served on any Lavender host. Recorded for auditability;
+  no raw files were saved and NO WellKnown / SecurityTxt / AgentCard pointer is wired
+  in apis.yml, because nothing was found — this file documents an absence and must
+  never be read as a presence.
+  IMPORTANT — SOFT-200 WARNING: app.lavender.ai and dashboard.lavender.ai answer
+  HTTP 200 with content-type text/html for EVERY path probed, including
+  /.well-known/agent-card.json and /openapi.json. These are single-page-app
+  catch-alls returning the Lavender web app shell (`<!doctype html>` … "Lavender is
+  an Email Assistant…"), not documents. They are recorded as `soft_200: true` /
+  `document: false` and treated as misses. A future round that trusts the status
+  code alone would fabricate an agent card and an OpenAPI for this company.
+  docs.lavender.ai is a dangling Stoplight host: it CNAMEs to ingress.stoplight.io
+  and Cloudflare returns `error code: 1014` (CNAME cross-user banned) with HTTP 403
+  on every path, so the API documentation Lavender provisioned there is unreachable.
 hosts:
 - host: https://www.lavender.ai
+  kind: marketing site
   documents:
-  - path: /.well-known/security.txt
-    status: 404
-  - path: /.well-known/openid-configuration
-    status: 404
-  - path: /.well-known/oauth-authorization-server
-    status: 404
-  - path: /.well-known/api-catalog
-    status: 404
-  - path: /.well-known/ai-plugin.json
-    status: 404
-  - path: /llms.txt
-    status: 404
+  - {path: /.well-known/security.txt, status: 404, document: false}
+  - {path: /.well-known/openid-configuration, status: 404, document: false}
+  - {path: /.well-known/oauth-authorization-server, status: 404, document: false}
+  - {path: /.well-known/oauth-protected-resource, status: 404, document: false}
+  - {path: /.well-known/api-catalog, status: 404, document: false}
+  - {path: /.well-known/ai-plugin.json, status: 404, document: false}
+  - {path: /.well-known/agent-card.json, status: 404, document: false}
+  - {path: /.well-known/agent.json, status: 404, document: false}
+  - {path: /llms.txt, status: 404, document: false}
+  - {path: /openapi.json, status: 404, document: false}
 - host: https://api.lavender.ai
+  kind: api hostname (serves the web app shell at /, plain-text 404 elsewhere)
   documents:
-  - path: /.well-known/security.txt
-    status: 404
-  - path: /.well-known/openid-configuration
-    status: 404
-  - path: /.well-known/oauth-authorization-server
-    status: 404
-  - path: /.well-known/api-catalog
-    status: 404
-  - path: /.well-known/ai-plugin.json
-    status: 404
-  - path: /llms.txt
-    status: 404
-  - path: /openapi.json
-    status: 404
+  - {path: /.well-known/security.txt, status: 404, document: false}
+  - {path: /.well-known/openid-configuration, status: 404, document: false}
+  - {path: /.well-known/oauth-authorization-server, status: 404, document: false}
+  - {path: /.well-known/oauth-protected-resource, status: 404, document: false}
+  - {path: /.well-known/api-catalog, status: 404, document: false}
+  - {path: /.well-known/ai-plugin.json, status: 404, document: false}
+  - {path: /.well-known/agent-card.json, status: 404, document: false}
+  - {path: /.well-known/agent.json, status: 404, document: false}
+  - {path: /llms.txt, status: 404, document: false}
+  - {path: /openapi.json, status: 404, document: false}
+- host: https://app.lavender.ai
+  kind: single-page app — CATCH-ALL, answers 200 text/html for every path
+  soft_200: true
+  documents:
+  - {path: /.well-known/security.txt, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/openid-configuration, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/oauth-authorization-server, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/oauth-protected-resource, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/api-catalog, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/ai-plugin.json, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/agent-card.json, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/agent.json, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /llms.txt, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /openapi.json, status: 200, content_type: text/html, soft_200: true, document: false}
+- host: https://dashboard.lavender.ai
+  kind: single-page app — CATCH-ALL, answers 200 text/html for every path
+  soft_200: true
+  documents:
+  - {path: /.well-known/security.txt, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/openid-configuration, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/oauth-authorization-server, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/oauth-protected-resource, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/api-catalog, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/ai-plugin.json, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/agent-card.json, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /.well-known/agent.json, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /llms.txt, status: 200, content_type: text/html, soft_200: true, document: false}
+  - {path: /openapi.json, status: 200, content_type: text/html, soft_200: true, document: false}
+- host: https://docs.lavender.ai
+  kind: dangling Stoplight docs host (CNAME ingress.stoplight.io) — Cloudflare 1014
+  reachable: false
+  documents:
+  - {path: /.well-known/security.txt, status: 403, document: false}
+  - {path: /.well-known/agent-card.json, status: 403, document: false}
+  - {path: /.well-known/agent.json, status: 403, document: false}
+  - {path: /llms.txt, status: 403, document: false}
+  - {path: /openapi.json, status: 403, document: false}
+contract_discovery:
+  openapi: none
+  graphql: none
+  mcp: none
+  asyncapi: none
+  agent_card: none
+  paths_probed:
+  - /openapi.json
+  - /openapi.yaml
+  - /swagger.json
+  - /v1/openapi.json
+  - /api-docs
+  - /redoc
+  - /graphql
+  - /mcp
+  hosts_probed:
+  - www.lavender.ai
+  - api.lavender.ai
+  - app.lavender.ai
+  - dashboard.lavender.ai
+  - docs.lavender.ai
+  - developer.lavender.ai
+  - ora.im
+  registries_probed:
+  - {registry: 'registry.modelcontextprotocol.io', query: lavender, results: 0}
+  note: >-
+    Every /openapi.json, /swagger.json, /graphql and /mcp candidate either 404d, 403d,
+    or returned the SPA HTML shell. No machine-readable contract of any kind is
+    published by Lavender as of 2026-08-13.

@@ -9,19 +9,39 @@
 ## Products
 
 - [Email Coach](https://www.lavender.ai/coach): Real-time scoring and coaching for sales email in Gmail, Outlook, and supported sales engagement tools.
-- [Ora](https://www.ora.im): AI sales agent that drafts email and reasons through prospect research.
+- [Ora](https://www.lavender.ai/ora): AI sales agent that drafts email and reasons through prospect research. $500 per agent per month at launch.
 - [CRM Enrichment](https://www.lavender.ai/crm): Pushes reasoned research into Salesforce contact and account records. Available to Salesforce CRM customers.
 - [Install](https://install.lavender.ai): Add the Email Coach to Chrome.
 - [Dashboard](https://dashboard.lavender.ai/): Account sign-in.
 
 ## Developer surface
 
-- No public API, developer portal, or API reference is published as of 2026-07-19.
-- No OpenAPI, AsyncAPI, GraphQL, or gRPC definition is published.
-- No first-party client SDKs or CLI are published on npm, PyPI, or other public registries.
+Re-verified 2026-08-13. Lavender publishes no machine-readable API contract of any kind.
+
+- No public API, developer portal, or API reference is published.
+- No OpenAPI, Swagger, AsyncAPI, GraphQL, or gRPC definition is published on any Lavender host.
+- No MCP server is published; the Model Context Protocol registry returns zero results for "lavender".
+- No A2A agent card is served at `/.well-known/agent-card.json` or `/.well-known/agent.json`.
 - No webhook or event catalog is published.
-- No `/.well-known/` discovery documents are served on `www.lavender.ai` or `api.lavender.ai`.
-- Integration with Lavender is via the browser extension, the Outlook add-in, and the Salesforce integration.
+- No `/.well-known/` discovery document is served on any host.
+- `docs.lavender.ai` CNAMEs to `ingress.stoplight.io` — Lavender provisioned Stoplight-hosted API
+  documentation at some point, but the host is dangling and Cloudflare returns `error code: 1014`
+  (HTTP 403) on every path, so nothing there is reachable.
+- Caution for automated crawlers: `app.lavender.ai` and `dashboard.lavender.ai` are single-page apps
+  that answer **HTTP 200 with HTML for every path**, including `/openapi.json` and
+  `/.well-known/agent-card.json`. Those are the web-app shell, not documents. See
+  `well-known/lavender-well-known.yml`.
+- Integration with Lavender is via the browser extension, the Outlook add-in, the Salesforce
+  integration, and partner-built connectors such as Clay's "Rate Your Emails with Lavender" action
+  (Clay-built, mechanism undocumented).
+
+## Packages
+
+- [@lavender-ai/lav-components](https://www.npmjs.com/package/@lavender-ai/lav-components): First-party
+  React UI component library used to build the Lavender Dashboard and extension. v2.0.3, published
+  2026-02-16, 62 releases since January 2024. This is **not** an API client SDK.
+- No first-party package exists on PyPI, RubyGems, crates.io, NuGet, Maven Central, pkg.go.dev, or
+  Packagist. The PyPI project named `lavender` is an unrelated third-party code formatter.
 
 ## Docs and learning
 
@@ -33,19 +53,21 @@
 
 ## Commercial and legal
 
-- [Pricing — Coach](https://www.lavender.ai/coach#pricing)
-- [Pricing — Ora](https://www.lavender.ai/ora#pricing)
+- [Pricing — Coach](https://www.lavender.ai/coach#pricing): Basic $0/mo, Starter $27/mo, Individual Pro
+  $45/mo, Team $89/seat/mo (annual billing; monthly is $29/$49/$99). Enterprise is quoted.
+- [Pricing — Ora](https://www.lavender.ai/ora#pricing): $500 per agent per month, 1k emails/mo to 4k
+  contacts/yr per agent.
 - [Terms of Service](https://www.lavender.ai/terms-of-service)
 - [Privacy & Data](https://www.lavender.ai/privacy)
 - Compliance: SOC 2 Type 2 certified, GDPR and CCPA compliant. Not tailored to HIPAA or FISMA.
+  A Drata-hosted trust center is provisioned at `trust.lavender.ai` but is behind a bot challenge and
+  could not be read.
 
-## API Evangelist artifacts
+## Artifacts
 
-- [apis.yml](https://raw.githubusercontent.com/api-evangelist/lavender/refs/heads/main/apis.yml)
-- conformance/lavender-conformance.yml — published compliance posture
-- security/lavender-domain-security.yml — TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe
-- well-known/lavender-well-known.yml — /.well-known probe results (none published)
-
-## Contact
-
-- support@lavender.ai
+- [Packages](packages/lavender-packages.yml)
+- [Plans and pricing](plans/lavender-plans-pricing.yml)
+- [Conformance](conformance/lavender-conformance.yml)
+- [Domain security](security/lavender-domain-security.yml)
+- [Trust center probe](security/lavender-trust-center.yml)
+- [Well-known probe](well-known/lavender-well-known.yml)

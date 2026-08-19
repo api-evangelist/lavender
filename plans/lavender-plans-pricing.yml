@@ -1,0 +1,113 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.lavender.ai/coach
+sources:
+- https://www.lavender.ai/coach
+- https://www.lavender.ai/ora
+currency: USD
+plan_count: 6
+notes: >-
+  Lavender publishes seat-based SaaS pricing for its end-user products, not API
+  plans — there is no public API, so none of these tiers carry a call quota, a rate
+  limit, or an API key entitlement. Quotas below are message/email quotas consumed
+  through the browser extension and Outlook add-in. Prices captured verbatim from
+  the public pricing sections on 2026-08-13.
+products:
+- product: Email Coach
+  url: https://www.lavender.ai/coach#pricing
+  plans:
+  - name: Basic
+    price: 0
+    display_price: $0/mo
+    billing_period: month
+    contract: free-forever
+    included:
+      analyze_emails_per_month: 5
+      personalize_emails_per_month: 5
+    features:
+    - Gmail + Outlook 365
+    - AI Email Writer
+    - AI Recommendations
+    - Mobile Optimization
+  - name: Starter
+    price: 27
+    display_price: $27/mo
+    billing_period: month
+    contract: annual
+    monthly_price: 29
+    monthly_display_price: $29/mo
+    included:
+      emails: unlimited
+      personalization: unlimited
+      ai_recommendations: unlimited
+    features:
+    - Unlimited emails
+    - Multi-inbox support
+    - Gmail + Outlook 365
+    - AI Email Writer
+    - Chat support
+    - Integrations
+    - Mobile optimization
+  - name: Individual Pro
+    price: 45
+    display_price: $45/mo
+    billing_period: month
+    contract: annual
+    monthly_price: 49
+    monthly_display_price: $49/mo
+    included:
+      everything: unlimited
+    features:
+    - Everything in Starter
+    - Integrations
+    - Priority support
+    - Dedicated CSM
+  - name: Team Plan
+    price: 89
+    display_price: $89/seat/mo
+    billing_period: month
+    contract: annual
+    unit: seat
+    monthly_price: 99
+    monthly_display_price: $99/seat/mo
+    features:
+    - Integrations
+    - Coaching Dashboard
+    - Aggregated Email Analytics
+    - Accelerated Dynamic Scoring
+    - Proactive Customer Success
+    - Human-Led Coaching Programs
+    - Content-Studio Access
+    note: >-
+      Page states "Starter, Growth, & Enterprise Plans available" for teams; those
+      sub-tiers are not itemized publicly.
+  - name: Enterprise
+    price: null
+    billing_period: null
+    contract: custom
+    sales_gated: true
+    note: Quoted via "Schedule a demo"; no public price.
+- product: Ora
+  url: https://www.lavender.ai/ora#pricing
+  plans:
+  - name: Ora Agent
+    price: 500
+    display_price: $500 per Agent, Per Month at Launch
+    billing_period: month
+    contract: monthly
+    unit: agent
+    included:
+      emails_per_month: 1000
+      contacts_per_year: 4000
+    features:
+    - Build agents for free during development
+    - Volume and pricing scale with each agent launched
+    note: >-
+      "No annual commitments. Pay per month." A "Talk to Sales" path exists for
+      larger volume; those terms are not published.
+overage: null
+overage_note: No overage schedule is published for any tier.
+api_plans: none
+api_plans_note: >-
+  No developer/API pricing tier of any kind is published. Lavender sells seats and
+  agents, not API calls.
