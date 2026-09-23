@@ -1,0 +1,29 @@
+# Front Door AI Index — lavender — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: lavender
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.lavender.ai
+  final_host: lavender.ai
+  ownership: own
+  owner: lavender
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 9
+  host_score: 9
+  density: 14.11
+  words: 638
+  tiers:
+    agentic: 1
+    core: 8
+    model: 0
+  ambiguous: 1
+  top_terms:
+    AI: 6
+    LLMs: 1
+    agent: 1
+    fine-tune: 1
+    large language model: 1
