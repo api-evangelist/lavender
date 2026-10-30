@@ -64,24 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Lavender is an AI email intelligence company for sales teams. Its Email Coach is a browser extension and
-Outlook add-in that scores and coaches outbound sales email in real time — subject line, structure, tone,
-length and personalization — using models trained on billions of sales emails. Its newer product, Ora, is
-an AI sales agent that drafts email and pushes reasoned prospect research into Salesforce CRM records.
+Lavender is an AI email intelligence company for sales teams. Its Email Coach is a browser extension and Outlook add-in that scores and coaches outbound sales email in real time — subject line, structure, tone, length and personalization — using models trained on billions of sales emails, and its newer product Ora is an AI sales agent that drafts email and pushes reasoned prospect research into Salesforce CRM records. Lavender is distributed as an end-user extension and a Salesforce integration rather than as a public developer API: as of this profile the company publishes no developer portal, no API reference, no OpenAPI definition, and no client SDKs. It is SOC 2 Type 2 certified and GDPR compliant. Lavender is backed by Norwest Venture Partners.
 
-Lavender ships as an end-user extension and a CRM integration rather than as a developer platform. As of
-2026-07-19 the company publishes **no public developer API**: no developer portal, no API reference, no
-OpenAPI/AsyncAPI definition, no client SDKs or CLI, no webhook catalog, and no `/.well-known/` discovery
-documents. This profile therefore captures identity, commercial and legal links, published compliance
-posture, and a domain-security probe.
+**Areas:** Company · Sales · Email · Artificial Intelligence · Sales Enablement · Sales Engagement · CRM · Browser Extension · Productivity
 
-Lavender is SOC 2 Type 2 certified and GDPR/CCPA compliant.
+## Lavender on APIs.io
 
-Backed by: norwest-venture-partners — https://www.lavender.ai
+Everything profiled for Lavender is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lavender/](https://apis.io/providers/lavender/)** — or go straight to one of the APIs or properties below.
 
-## Artifacts
+### Published properties
 
-- `conformance/lavender-conformance.yml` — published compliance posture (searched)
-- `security/lavender-domain-security.yml` — TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe (probed)
-- `well-known/lavender-well-known.yml` — `/.well-known/` probe results, all 404 (searched)
-- `llms/lavender-llms.txt` — agent-readable profile (generated)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Lavender Domain Security](https://apis.io/security/lavender/lavender-domain-security/)
+- [Lavender Trust Center](https://apis.io/security/lavender/lavender-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Lavender Plans Pricing](https://apis.io/plans/lavender/lavender-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.lavender.ai)
+- [Pricing](https://www.lavender.ai/coach#pricing)
+- [Sign up](https://install.lavender.ai)
+- [Support](https://www.lavender.ai/blog?category=Product+Help)
+- [Blog](https://www.lavender.ai/blog)
+- [Compliance](https://www.lavender.ai/privacy)
+- [Terms of service](https://www.lavender.ai/terms-of-service)
+- [Privacy policy](https://www.lavender.ai/privacy)
+
+## API Evangelist rating
+
+**Kin Score 19.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 46.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lavender/](https://apis.io/providers/lavender/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lavender: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lavender/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
